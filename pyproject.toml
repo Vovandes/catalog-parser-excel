@@ -1,0 +1,40 @@
+[project]
+name = "catalog-parser-excel"
+version = "1.0.0"
+description = "Парсер каталога books.toscrape.com с выгрузкой в оформленный Excel"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Vladimir" }]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28",
+    "beautifulsoup4>=4.13",
+    "lxml>=5.0",
+    "openpyxl>=3.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+# Русские тексты в строках и докстрингах — норма для проекта.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["catalog_parser", "tests", "scripts"]
+strict = true
+warn_unreachable = true
+# В заглушках types-openpyxl у правил условного форматирования нет аннотаций.
+untyped_calls_exclude = ["openpyxl.formatting.rule"]
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_decorators = false

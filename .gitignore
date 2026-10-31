@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Виртуальное окружение
+.venv/
+venv/
+
+# Кэши инструментов
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Результаты и логи запусков
+output/
+logs/
+*.log
+
+# Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+
+# Временные файлы Excel и IDE
+~$*.xlsx
+.idea/
+.vscode/
+.vs/
+Thumbs.db
+
+# Local / build artifacts
+publish/
+[Bb]in/
+[Oo]bj/
+.local/

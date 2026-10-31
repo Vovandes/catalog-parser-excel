@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest==9.2.0
+ruff==0.17.3
+mypy==2.4.1
+types-openpyxl==3.1.5.20261017

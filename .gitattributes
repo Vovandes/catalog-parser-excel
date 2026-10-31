@@ -1,0 +1,11 @@
+# Исходники и тексты храним с LF.
+* text=auto eol=lf
+
+# Фикстуры — точные копии страниц сайта, Git их не трогает.
+tests/fixtures/** -text
+
+*.xlsx binary
+*.png binary
+
+# Скрипты Windows PowerShell: CRLF (кодировка — UTF-8 с BOM, иначе PowerShell 5.1 портит кириллицу).
+*.ps1 text eol=crlf
